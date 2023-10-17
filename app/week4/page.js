@@ -1,21 +1,14 @@
-import dynamic from 'next/dynamic';
+"use client";
 
-const NewItem = dynamic(() => import('./new-item'), {
-  ssr: false
-});
+import React from 'react';
+import NewItem from './new-item';
 
 function Page() {
-    return (
-        <div>
-            <NewItem />
-        </div>
-    );
+  return (
+    <div>
+      <NewItem />
+    </div>
+  );
 }
 
 export default Page;
-
-
-
-
-
-
