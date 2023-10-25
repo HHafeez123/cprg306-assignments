@@ -16,6 +16,10 @@ export default function Home() {
       <div>
       <Link href="/week5" style={{fontSize: '1em', marginLeft: '250px'}}>Week 5</Link>
       </div>
+      <div>
+      <Link href="/week6" style={{fontSize: '1em', marginLeft: '250px'}}>Week 6</Link>
+      </div>
+
     </main>
   )
 }
