@@ -42,7 +42,6 @@ function MealIdeas({ ingredient }) {
                         {meals && meals.map(meal => (
                             <li key={meal.idMeal}>
                                 {meal.strMeal}
-                                {/* More code can be added to handle displaying ingredients when the meal is clicked */}
                             </li>
                         ))}
                     </ul>
