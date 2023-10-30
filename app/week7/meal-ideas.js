@@ -10,8 +10,10 @@ function MealIdeas({ ingredient }) {
         async function fetchMealIdeas() {
             if(!ingredient) return;
 
+            const firstWord = ingredient.split(" ")[0];
+
             try {
-                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${firstWord}`);
                 const data = await response.json();
                 if (data.meals) {
                     setMeals(data.meals);
