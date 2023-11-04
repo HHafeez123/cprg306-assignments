@@ -22,7 +22,9 @@ export default function Home() {
       <div>
       <Link href="/week7" style={{fontSize: '1em', marginLeft: '250px'}}>Week 7</Link>
       </div>
-
+      <div>
+      <Link href="/week8" style={{fontSize: '1em', marginLeft: '250px'}}>Week 8</Link>
+      </div>
     </main>
   )
 }

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Item from './item';
 
-function ItemList({ items }) {  
+function ItemList({ items, onItemSelect }) {  
     const [sortBy, setSortBy] = useState('name');
 
     let itemsCopy = [...items];  
@@ -51,21 +51,22 @@ function ItemList({ items }) {
                 </button>
             </div>
             
+            
             <ul>
-                {
-                    sortBy === 'grouped' ? 
-                    Object.keys(groupedItems).sort().map(category => (
-                        <div key={category}>
-                            <h2 className="font-bold text-xl mt-4">{category}</h2>
-                            {groupedItems[category].map(item => (
-                                <Item key={item.id} {...item} />
-                            ))}
-                        </div>
-                    )) :
-                    itemsCopy.map((item) => (
-                        <Item key={item.id} {...item} />
-                    ))
-                }
+            {
+                sortBy === 'grouped' ? 
+                Object.keys(groupedItems).sort().map(category => (
+                    <div key={category}>
+                        <h2 className="font-bold text-xl mt-4">{category}</h2>
+                        {groupedItems[category].map(item => (
+                            <Item key={item.id} {...item} />
+                        ))}
+                    </div>
+                )) :
+                itemsCopy.map((item) => (
+                    <Item key={item.id} {...item} onSelect={onItemSelect} />
+                ))
+            }
             </ul>
         </div>
     );

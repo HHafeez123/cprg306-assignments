@@ -8,7 +8,6 @@ import NewItem from './new-item';
 function Page() {
     const [items, setItems] = useState(itemsData);
 
-    // For this example, we're using a Date timestamp as a unique ID for simplicity.
     const handleAddItem = (newItem) => {
         const itemWithId = {
             ...newItem,
