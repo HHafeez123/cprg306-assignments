@@ -1,4 +1,6 @@
-import { addDoc, collection, getDocs, query } from "firebase/firestore";
+// shopping-list-service.js
+import { addDoc, collection, deleteDoc, getDocs, query } from "firebase/firestore";
+import { useEffect } from 'react';
 import { db } from "../_utils/firebase";
 
 export async function getItems(userId) {
@@ -39,4 +41,11 @@ export async function deleteItem(userId, itemId) {
   } catch (error) {
     console.error("Error deleting item:", error);
   }
+}
+
+// Example of using useEffect
+export function useEffectExample() {
+  useEffect(() => {
+    // Your useEffect logic here
+  }, []); // Empty dependency array for componentDidMount behavior
 }
